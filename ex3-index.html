@@ -77,7 +77,8 @@
         </li>
         <li>
           Uso el método de array adecuado para convertir en array en un stirng y
-          separar cada elemento del array con un guión a continuación:{{randomNumbers.join("-")}}
+          separar cada elemento del array con un guión a
+          continuación:{{randomNumbers.join("-")}}
         </li>
         <li>
           Cada vez que hagamos click en este botón, debemos añadir un número
@@ -87,7 +88,7 @@
         <li>
           MEGA BONUS: Usa una expresión JavaScript entre mustaches para indicar,
           usando adecuadamente el método `some`, para detectar si existe un
-          número mayor a 50 :
+          número mayor a 50 :{{randomNumbers.some((v) => v>50)}}
         </li>
       </ol>
     </div>
@@ -112,9 +113,9 @@
             mustHideCat.value = true;
           };
 
-          const addNumber =()=>{
-            randomNumbers
-          }
+          const addNumber = () => {
+            randomNumbers.value.push(Math.floor(Math.random() * 101));
+          };
 
           return {
             youClickedMe,
@@ -122,6 +123,7 @@
             mustHideCat,
             gatoEscondido,
             randomNumbers,
+            addNumber,
           };
         },
       }).mount("#app");
